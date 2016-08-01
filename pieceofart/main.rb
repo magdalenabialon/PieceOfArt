@@ -59,12 +59,48 @@ end
 
 
 get '/results' do
-  "Hello World"
   # sql = "SELECT * FROM pokemon WHERE species = '#{params["species"]}';"
   # @pokem = run_sql(sql)[0]
-  # erb :results
+  erb :results
 end
 
+
+get '/create' do
+  erb :create
+end
+
+
+post '/create' do
+  if !logged_in?
+    redirect to '/'
+  end
+
+    @painting = Painting.new
+    @painting.title = params[:title]
+    @painting.img_url = params[:img_url]
+    @painting.author = params[:author]
+    @painting.century = params[:century]
+    @painting.style = params[:style]
+    @painting.seen_live = params[:seen_live]
+    @painting.city = params[:city]
+    @painting.museum = params[:museum]
+    @painting.user_id = current_user.id
+    @painting.save
+
+    redirect to '/my_album'
+
+    # my_albym.erb >>
+    # <% @painting.each do |painting| %>
+    #   <h2> <a href="/painting_detail/<%= painting.id %>"> <%= painting.title %> </a> </h2>
+    #   <a href="/painting_detail/<%= painting.id %>"> <img src = " <%= painting.img_url %> "> </a>
+    # <% end %>
+
+end
+
+
+get '/painting_detail/:id' do
+  'beauty'
+end
 
 
 

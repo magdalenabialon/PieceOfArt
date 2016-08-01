@@ -21,6 +21,7 @@ CREATE TABLE paintings (
   style VARCHAR(100),
   seen_live VARCHAR(10),
   city VARCHAR(300),
+  museum VARCHAR(100),
   user_id INTEGER
 );
 
@@ -28,7 +29,8 @@ INSERT INTO paintings (title, img_url, author, century, style, seen_live, city) 
               ('The Kiss', 'http://www.myfreewallpapers.net/artistic/wallpapers/gustav-klimt-the-kiss.jpg', 'Gustav Klimt','XX', 'Art Nouveau', 'yes', 'Vienna');
 
 
--- ALTER TABLE paintings ADD map ??;
+ALTER TABLE paintings ADD museum VARCHAR(100);
+-- ALTER TABLE paintings ADD map ?????????;
 
 -- ALTER TABLE paintings ADD user_id INTEGER;  FOR LIKES TABLE
 -- ALTER TABLE comments ADD user_id INTEGER;  FOR LIKES TABLE
