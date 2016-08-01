@@ -19,8 +19,6 @@ h6{
   text-align: left;
 }
 
-
-
 .sliding_banner {
   height: 200px;
   margin: 0;
@@ -28,7 +26,7 @@ h6{
   /*width: 100%;*/
 }
 
-#login_section {
+#login_section, #myAlbumSection {
   height: 220px;
   background-color: yellow;
   margin: 0;

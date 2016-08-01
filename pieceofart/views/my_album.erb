@@ -1,0 +1,11 @@
+<div id = myAlbumSection>
+  <%if logged_in?%>
+    <h3>Hello <%= current_user.name %></h3>
+  <%end%>
+
+  <form action="/results" method = "get">
+    <input type="text" placeholder = "painting title"  name = "painting_search" >
+    <button id = "search">search painting</button>
+  </form>
+
+</div>

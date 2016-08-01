@@ -9,17 +9,29 @@
 
 <div id = 'login_section'>
 
-  <form action="/session" method = "post">
+  <%if !logged_in?%>
+    <form action="/session" method = "post">
+      <label for="">email</label>
+      <input type="text" name = "email">
+      <label for="">password</label>
+      <input type="password" name = "password">
+      <button>login</button>
+    </form>
+  <%end%>
 
-  <label for="">email</label>
-<input type="text"name = "email">
+  <%if logged_in?%>
+    <h3>Hello <%= current_user.name %></h3>
+    <a href="/my_album">my album</a>
+    <form action="/session" method = "post">
+      <input type="hidden" name ="_method" value = 'delete'>
+      <button>logout</button>
+    </form>
+  <%end%>
 
-  <label for="">password</label>
-  <input type="password" name = "password">
-
-  <button>login</button>
-
-</form>
+  <form action="/results" method = "get">
+    <input type="text" placeholder = "painting title"  name = "painting_search" >
+    <button id = "search">search painting</button>
+  </form>
 
 
 </div>
