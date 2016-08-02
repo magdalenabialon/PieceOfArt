@@ -45,8 +45,8 @@
 <%if logged_in? %>
 
   <% @all_comments.each do |comment| %>
+  <p> author: user <%=comment.user_id %> </p>
     <p> <%= comment.comment %> </p>
-    <p> author: user <%=comment.user_id %> </p>
 
 
     <%if comment.user_id == current_user.id %>

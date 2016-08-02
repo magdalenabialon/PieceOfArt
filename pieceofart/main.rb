@@ -42,7 +42,7 @@ post '/session' do
     session[:user_id] = user.id
     redirect to '/'
   else
-    erb :index
+    redirect back
   end
 end
 
