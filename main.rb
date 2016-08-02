@@ -7,6 +7,7 @@ require_relative 'db_config'
 require_relative 'models/comment'
 require_relative 'models/painting'
 require_relative 'models/user'
+require_relative 'models/like'
 
 
 
@@ -26,6 +27,27 @@ end
 def current_user
   User.find(session[:user_id])
 end
+
+
+
+
+
+def num_likes
+  # @painting = Painting.find_by(id: params[:id])
+  @number_of_paintings = @paintings.size
+  @painting = Painting.find(8)
+  binding.pry
+  @likes = @painting.likes.size
+  # @num_us_likes = current_user.likes
+  # @painting.liked_by
+
+  # @num_painting_likes = @painting.likes.size
+
+
+  # @likes= @like.painting_id.size          # ****  o.likes # all likes for o **
+end
+
+
 
 
 
@@ -56,6 +78,10 @@ end
 
 get '/my_album' do
   @paintings = current_user.paintings
+
+  #CALL MY FUNCTION to show likes
+  num_likes
+
   # binding.pry
   erb :my_album
 end
@@ -168,6 +194,13 @@ put '/paintings/update_comment/:id' do
   @comment.update(comment: params[:comment])
   redirect back
 end
+
+
+
+# <form action="/painting/<%= @painting.id/like %>" method="post">
+#    <p></p>
+#    <button>Like</button>
+# </form>
 
 
 

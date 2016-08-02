@@ -42,3 +42,10 @@ CREATE TABLE comments (
   painting_id INTEGER,
   user_id INTEGER
 );
+
+
+CREATE TABLE likes (
+  id SERIAL4 PRIMARY KEY,
+  painting_id INTEGER,
+  user_id INTEGER
+);
