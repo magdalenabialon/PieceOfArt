@@ -31,6 +31,7 @@ end
 
 
 get '/' do
+  @paintings = Painting.all
   erb :index
 end
 
@@ -96,12 +97,17 @@ end
 
 
 
-get '/results/' do
-  # sql = "SELECT * FROM pokemon WHERE species = '#{params["species"]}';"
-  # @pokem = run_sql(sql)[0]
-  @painting = Painting.find(params[:title])
-  erb :results
+
+get '/results' do
+    @paint = Painting.find_by(title: params[:painting_search])
+  # binding.pry
+  if @paint
+    erb :results
+  else
+    redirect back
+  end
 end
+
 
 
 
@@ -123,6 +129,19 @@ delete '/painting/:id' do
   painting.destroy
   redirect to "/my_album"
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
