@@ -92,6 +92,7 @@ end
 
 get '/painting_detail/:id' do
   @painting = Painting.find(params[:id])
+  @all_comments = @painting.comments.all
   erb :painting_detail
 end
 
@@ -102,7 +103,7 @@ get '/results' do
     @painting = Painting.find_by(title: params[:painting_search])
   # binding.pry
   if @painting
-    erb :results
+    erb :painting_detail
   else
     redirect back
   end
@@ -112,19 +113,21 @@ end
 
 
 get '/painting/:id/edit' do
+  @user = User.find_by(email: params[:email])
+  if @user && @user.authenticate(params[:password])
     @painting = Painting.find(params[:id])
     erb :edit
+  end
 end
+
 
 
 put '/painting/:id/edit' do
-  @user = User.find_by(email: params[:email])
-  if @user && @user.authenticate(params[:password])
-    painting = Painting.find(params[:id])
-    painting.update(title: params[:title], img_url: params[:img_url], author: params[:author], century: params[:century], style: params[:style], seen_live: params[:seen_live], city: params[:city], museum: params[:museum ])
-    redirect to "/painting_detail/#{params[:id]}"
-  end
+  painting = Painting.find(params[:id])
+  painting.update(title: params[:title], img_url: params[:img_url], author: params[:author], century: params[:century], style: params[:style], seen_live: params[:seen_live], city: params[:city], museum: params[:museum ])
+  redirect to "/painting_detail/#{params[:id]}"
 end
+
 
 
 delete '/painting/:id' do
@@ -135,9 +138,36 @@ end
 
 
 
+post '/painting/:id' do
+
+  @comment = Comment.new
+  @comment.comment = params[:comment]
+  @comment.painting_id = params[:id]
+  @comment.user_id = current_user.id
+  @comment.save
+    # binding.pry
+  @painting = Painting.find(params[:id])
+
+  @all_comments = @painting.comments.all
+  redirect to "/painting_detail/#{params[:id]}"
+
+end
 
 
 
+delete '/paintings/delete/:id' do
+  @comment = Comment.find(params[:id])
+  @comment.destroy
+  redirect back
+end
+
+
+put '/paintings/update_comment/:id' do
+  @comment = Comment.where(painting_id: params[:id], user_id: current_user.id)
+  @comment = Comment.find(params[:id])
+  @comment.update(comment: params[:comment])
+  redirect back
+end
 
 
 

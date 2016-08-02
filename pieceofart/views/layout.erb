@@ -14,6 +14,7 @@
     <h6><a id = 'menu_link' href = "/"> home </a></h6>
     <%if logged_in?%>
       <h6><a id = 'myAlbumLink' href = "/my_album"> go to my album </a></h6>
+      <h3>Hello <%= current_user.name %></h3>
     <%end%>
   </menu>
 
