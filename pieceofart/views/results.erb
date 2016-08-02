@@ -7,8 +7,3 @@
 <h2> Seen live: <%= @painting.seen_live %> </h2>
 <h2> City: <%= @painting.city %> </h2>
 <h2> Museum: <%= @painting.museum %> </h2>
-
-<form action="/painting/<%= @painting.id %>" method="post">
-  <input type="text" maxlength='500'  name = "comment" >
-  <button>Add comment</button>
-</form>
