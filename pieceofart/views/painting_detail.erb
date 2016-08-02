@@ -1,1 +1,22 @@
-'here will be displayed details of paintings'
+
+<img src = " <%= @painting.img_url %> ">
+
+<h2> Title:  <%= @painting.title %> </h2>
+<h2> Author: <%= @painting.author %> </h2>
+<h2> Century:  <%= @painting.century %> </h2>
+<h2> Style: <%= @painting.style %> </h2>
+<h2> Seen live: <%= @painting.seen_live %> </h2>
+<h2> City: <%= @painting.city %> </h2>
+<h2>  Museum: <%= @painting.museum %> </h2>
+
+
+
+ <%if logged_in?%>
+   <a href="/painting/<%= @painting.id %>/edit"> edit </a>
+
+
+   <form action="/painting/<%= @painting.id %>" method = "post">
+     <input type="hidden" name = "_method" value ="delete">
+     <button>delete</button>
+   </form>
+   <%end%>

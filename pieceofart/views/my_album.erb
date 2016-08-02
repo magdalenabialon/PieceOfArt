@@ -1,12 +1,21 @@
+
 <div id = 'myAlbumSection'>
 
   <%if logged_in?%>
+  
     <h3>Hello <%= current_user.name %></h3>
     <a  href="/create">create new position</a>
-    <form action="/results" method = "get">
+
+    <form action="/results/" method = "get">
       <input type="text" placeholder = "painting title"  name = "painting_search" >
       <button id = "search">search painting</button>
     </form>
+
+    <form action="/session" method = "post">
+      <input type="hidden" name ="_method" value = 'delete'>
+      <button>logout</button>
+    </form>
+
   <%end%>
 
 </div>
@@ -15,11 +24,11 @@
 
 <div id = 'myAlbumGallery'>
 
-   <% @painting %>
 
-
-
-
+    <% @paintings.each do |painting| %>
+      <h2> <a href="/painting_detail/<%= painting.id %>"> <%= painting.title %> </a> </h2>
+      <a href="/painting_detail/<%= painting.id %>"> <img src = " <%= painting.img_url %> "> </a>
+    <% end %>
 
 
 </div>

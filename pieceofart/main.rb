@@ -54,15 +54,11 @@ end
 
 
 get '/my_album' do
+  @paintings = current_user.paintings
+  # binding.pry
   erb :my_album
 end
 
-
-get '/results' do
-  # sql = "SELECT * FROM pokemon WHERE species = '#{params["species"]}';"
-  # @pokem = run_sql(sql)[0]
-  erb :results
-end
 
 
 get '/create' do
@@ -87,34 +83,46 @@ post '/create' do
     @painting.user_id = current_user.id
     @painting.save
 
-    redirect to '/my_album'
-
-    # my_albym.erb >>
-    # <% @painting.each do |painting| %>
-    #   <h2> <a href="/painting_detail/<%= painting.id %>"> <%= painting.title %> </a> </h2>
-    #   <a href="/painting_detail/<%= painting.id %>"> <img src = " <%= painting.img_url %> "> </a>
-    # <% end %>
+    redirect to "/my_album?#{@painting.id}"
 
 end
+
 
 
 get '/painting_detail/:id' do
-  'beauty'
+  @painting = Painting.find(params[:id])
+  erb :painting_detail
 end
 
 
 
+get '/results/' do
+  # sql = "SELECT * FROM pokemon WHERE species = '#{params["species"]}';"
+  # @pokem = run_sql(sql)[0]
+  @painting = Painting.find(params[:title])
+  erb :results
+end
 
 
 
+get '/painting/:id/edit' do
+  @painting = Painting.find(params[:id])
+  erb :edit
+end
 
 
+put '/painting/:id/edit' do
+  painting = Painting.find(params[:id])
+  painting.update(title: params[:title], img_url: params[:img_url], author: params[:author], century: params[:century], style: params[:style], seen_live: params[:seen_live], city: params[:city], museum: params[:museum ])
+  redirect to "/painting_detail/#{params[:id]}"
+end
 
 
-
-
-
-
+delete '/painting/:id' do
+  painting = Painting.find(params[:id])
+  painting.destroy
+  redirect to "/my_album"
+end
 
 
 
