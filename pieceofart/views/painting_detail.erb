@@ -11,12 +11,12 @@
 
 
 
- <%if logged_in?%>
+ <%if logged_in? && @user%>
    <a href="/painting/<%= @painting.id %>/edit"> edit </a>
-
 
    <form action="/painting/<%= @painting.id %>" method = "post">
      <input type="hidden" name = "_method" value ="delete">
      <button>delete</button>
    </form>
+
    <%end%>

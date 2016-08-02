@@ -99,9 +99,9 @@ end
 
 
 get '/results' do
-    @paint = Painting.find_by(title: params[:painting_search])
+    @painting = Painting.find_by(title: params[:painting_search])
   # binding.pry
-  if @paint
+  if @painting
     erb :results
   else
     redirect back
@@ -112,15 +112,18 @@ end
 
 
 get '/painting/:id/edit' do
-  @painting = Painting.find(params[:id])
-  erb :edit
+    @painting = Painting.find(params[:id])
+    erb :edit
 end
 
 
 put '/painting/:id/edit' do
-  painting = Painting.find(params[:id])
-  painting.update(title: params[:title], img_url: params[:img_url], author: params[:author], century: params[:century], style: params[:style], seen_live: params[:seen_live], city: params[:city], museum: params[:museum ])
-  redirect to "/painting_detail/#{params[:id]}"
+  @user = User.find_by(email: params[:email])
+  if @user && @user.authenticate(params[:password])
+    painting = Painting.find(params[:id])
+    painting.update(title: params[:title], img_url: params[:img_url], author: params[:author], century: params[:century], style: params[:style], seen_live: params[:seen_live], city: params[:city], museum: params[:museum ])
+    redirect to "/painting_detail/#{params[:id]}"
+  end
 end
 
 
