@@ -39,6 +39,7 @@ get '/' do
     .joins(:likes)
     .group(:painting_id, :title, :img_url)
     .order('likes_count desc')
+  # @top_ordered_paintgs.save
 
   erb :index
 end

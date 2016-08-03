@@ -31,3 +31,10 @@ h6{
   background-color: yellow;
   margin: 0;
 }
+
+.slideme {
+max-width: 990px;
+max-height: 450px;
+width: 100%;
+height: 100%;
+}

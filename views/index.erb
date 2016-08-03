@@ -1,9 +1,13 @@
+<link rel="stylesheet" href="stylesheets/slideme.css">
 
-<div id = 'banner'>
-  <img class = 'sliding_banner' src="/images/Birth_of_Venus_Botticelli.jpg" alt="">
-  <img class = 'sliding_banner' src="/images/Rae_-_Water_Nymphs_(color).png" alt="">
-  <img class = 'sliding_banner' src="/images/img.jpg" alt="">
-  <img class = 'sliding_banner' src="/images/Siemiradski_Fackeln.jpg" alt="">
+
+<div id='banner'>
+  <ul class='slideme'>
+    <li><img class = 'sliding_banner' src="/images/Birth_of_Venus_Botticelli.jpg" alt=""></li>
+    <li><img class = 'sliding_banner' src="/images/Rae_-_Water_Nymphs_(color).png" alt=""></li>
+    <li><img class = 'sliding_banner' src="/images/img.jpg" alt=""></li>
+    <li><img class = 'sliding_banner' src="/images/Siemiradski_Fackeln.jpg" alt=""></li>
+  </ul>
 </div>
 
 
@@ -58,3 +62,28 @@
 
 
 </div>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/jquery/3.1.0/jquery.min.js"></script>
+<script src="javascripts/slideme.js"></script>
+
+<script>
+$('#banner').slideme({
+  interval : 2000,
+  speed : 900,
+  autoslide : true,
+  loop : true,
+  autoslideHoverStop : false,
+  arrows: true,
+  pagination: 'numbers',
+    resizable: {
+    width: 990,
+    height: 450,
+    }
+});
+</script>
