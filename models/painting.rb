@@ -7,4 +7,7 @@ class Painting < ActiveRecord::Base
   has_many :comments
   has_many :users, through: :likes
 
+  # geocoded_by :city  #use column name
+  # # after_validation :geocode
+
 end

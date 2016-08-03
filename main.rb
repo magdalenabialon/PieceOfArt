@@ -138,17 +138,22 @@ end
 
 get '/painting/:id/edit' do
   @user = User.find_by(email: params[:email])
-  if @user && @user.authenticate(params[:password])
-    @painting = Painting.find(params[:id])
+  @painting = Painting.find(params[:id])
+  if logged_in? && @painting.user_id == current_user.id
     erb :edit
+  else
+    redirect '/'
   end
+
+
 end
 
 
 
 put '/painting/:id/edit' do
-  painting = Painting.find(params[:id])
-  painting.update(title: params[:title], img_url: params[:img_url], author: params[:author], century: params[:century], style: params[:style], seen_live: params[:seen_live], city: params[:city], museum: params[:museum ])
+  @painting = Painting.find(params[:id])
+  # binding.pry
+  @painting.update(title: params[:title], img_url: params[:img_url], author: params[:author], century: params[:century], style: params[:style], seen_live: params[:seen_live], city: params[:city], museum: params[:museum ])
   redirect to "/painting_detail/#{params[:id]}"
 end
 

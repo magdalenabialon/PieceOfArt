@@ -30,6 +30,12 @@ INSERT INTO paintings (title, img_url, author, century, style, seen_live, city) 
 
 
 ALTER TABLE paintings ADD museum VARCHAR(100);
+
+
+
+ALTER TABLE paintings ADD museum VARCHAR(100);
+ALTER TABLE paintings ADD museum VARCHAR(100);
+
 -- ALTER TABLE paintings ADD map ?????????;
 
 -- ALTER TABLE paintings ADD user_id INTEGER;  FOR LIKES TABLE
