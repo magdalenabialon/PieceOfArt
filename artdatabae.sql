@@ -33,8 +33,9 @@ ALTER TABLE paintings ADD museum VARCHAR(100);
 
 
 
-ALTER TABLE paintings ADD museum VARCHAR(100);
-ALTER TABLE paintings ADD museum VARCHAR(100);
+ALTER TABLE paintings ADD latitude real;
+ALTER TABLE paintings ADD longitude real;
+
 
 -- ALTER TABLE paintings ADD map ?????????;
 

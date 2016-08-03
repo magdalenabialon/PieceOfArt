@@ -30,6 +30,16 @@ def current_user
 end
 
 
+def index
+  if params[:search].present?
+    @locations = Location.near(params[:search], 50, :order => :distance)
+  else
+    @locations = Location.all
+  end
+end
+
+
+
 
 get '/' do
 
@@ -144,8 +154,6 @@ get '/painting/:id/edit' do
   else
     redirect '/'
   end
-
-
 end
 
 
@@ -174,7 +182,6 @@ post '/painting/:id' do
   @comment.painting_id = params[:id]
   @comment.user_id = current_user.id
   @comment.save
-    # binding.pry
   @painting = Painting.find(params[:id])
 
   @all_comments = @painting.comments.all
@@ -204,7 +211,10 @@ end
 
 
 
-
+# in models/paintings.rb:
+# # geocoded_by :city  #use column name
+# # after_validation :geocode
+# end
 
 
 
