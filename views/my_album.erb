@@ -30,7 +30,6 @@
       <form action="/painting/<%=painting.id%>/likes" method = "post">
         <input type="hidden" name ="_method" value = 'put'>
         <h5>Likes: <%= painting.likes.count %></h5>
-        <h5>Liked by: <%= painting.user_id %></h5>
         <button onclick = "this.style.backgroundColor='blue' ">Like</button>
       </form>
 

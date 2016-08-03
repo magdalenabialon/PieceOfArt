@@ -32,7 +32,14 @@ end
 
 
 get '/' do
+
   @paintings = Painting.all
+  @liked_paintings = Painting.joins(:likes).group(:painting_id).count(:painting_id)
+  @top_ordered_paintgs = Painting.select("count(painting_id) as likes_count, title, img_url")
+    .joins(:likes)
+    .group(:painting_id, :title, :img_url)
+    .order('likes_count desc')
+
   erb :index
 end
 
