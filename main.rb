@@ -4,6 +4,7 @@ require 'pry'
 
 require_relative 'db_config'
 
+
 require_relative 'models/comment'
 require_relative 'models/painting'
 require_relative 'models/user'
@@ -25,20 +26,8 @@ end
 
 
 def current_user
-  User.find(session[:user_id])
+  User.find_by(id: session[:user_id])
 end
-
-
-
-
-
-# def num_likes
-#   @number_of_paintings = @paintings.size
-#   # @likes = @painting.likes.size
-# end
-
-
-
 
 
 
@@ -74,14 +63,15 @@ end
 
 put '/painting/:id/likes' do
    @painting = Painting.find_by(id: params[:id])
-  #  @a = @painting.likes.count
-  if logged_in?
-    @like = Like.new
-    @like.painting_id = params[:id]
-    @like.user_id = current_user.id
-    @like.save
-    @painting.likes << @like
 
+  if logged_in?
+    if current_user.likes.find {|like| like.painting_id == @painting.id} == nil
+      @like = Like.new
+      @like.painting_id = params[:id]
+      @like.user_id = current_user.id
+      @like.save
+      @painting.likes << @like
+    end
   end
   redirect back
 end
