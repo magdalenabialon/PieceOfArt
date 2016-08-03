@@ -105,3 +105,43 @@ h4, h5 {
   display: inline-block;
   font-family: 'Quicksand', sans-serif;
 }
+
+input {
+    cursor: auto;
+    background-color: white;
+    height: 35px;
+    width: 400px;
+    color: grey;
+    font-size: 1em;
+    text-align: center;
+    border: 1px solid red;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/*#search {
+
+}
+
+#logoutBtn{
+
+}*/
+
+#loginBtn {
+    background-color: #3eb0f7;
+    border: 1px solid lightgrey;
+    height: 30px;
+    width: 90px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1em;
+    color: white;
+}
+
+.likebtn {
+    background-color: grey;
+    border: 1px solid lightgrey;
+    height: 20px;
+    width: 40px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 10px;
+    color: white;
+}

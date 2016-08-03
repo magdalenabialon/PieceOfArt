@@ -24,7 +24,7 @@
     <form action="/session" method = "post">
       <input type="text" placeholder="email" name = "email">
       <input type="password" placeholder="password" name = "password">
-      <button>login</button>
+      <button id= 'loginBtn'>login</button>
     </form>
   <%end%>
 
@@ -39,7 +39,7 @@
 
   <form action="/results" method="get">
     <input type="text" placeholder = "painting title"  name = "painting_search" >
-    <button id = "search">search painting</button>
+    <button id = "search">search</button>
   </form>
 
 </div>
@@ -56,7 +56,7 @@
             <input type="hidden" name ="_method" value = 'put'>
             <h5><%= painting.likes_count %></h5>
             <%if logged_in?%>
-              <button onclick = "this.style.backgroundColor='lightgrey' ">Like</button>
+              <button class = 'likebtn' onclick = "this.style.backgroundColor='lightgrey' ">Like</button>
             <% end %>
             </form>
        </div>

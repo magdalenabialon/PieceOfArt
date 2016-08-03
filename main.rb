@@ -135,9 +135,11 @@ end
 
 get '/results' do
     @painting = Painting.find_by(title: params[:painting_search])
+    # @all_comments = @painting.comments
   # binding.pry
   if @painting
-    erb :painting_detail
+    redirect to "/painting_detail/#{@painting.id}"
+    # erb :painting_detail
   else
     redirect back
   end
