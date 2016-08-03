@@ -3,38 +3,59 @@ body {
   margin: 0 auto;
 }
 
-#menu{
-  height: 20px;
+#menu_layout {
+  height: 0;
   margin: 0;
-  background-color: cyan;
-}
-
-#menu_link {
-  text-decoration: none;
-  font-size: 15px;
-}
-
-h6{
-  margin: 0;
+  /*background-color: cyan;*/
   text-align: left;
 }
 
-.sliding_banner {
-  height: 200px;
-  margin: 0;
-  /*height: 350px;*/
-  /*width: 100%;*/
+#menu_index {
+  height: 20px;
+  padding: 10px 0 10px 0;
+  background-color: black;
 }
 
 #login_section, #myAlbumSection, #paintDetBanner {
-  height: 220px;
-  background-color: yellow;
+  height: 250px;
+  background-color: black;
   margin: 0;
 }
 
+#home_link, #greeting, #greetIndex, #myAlbumLink, #myAlbumInx {
+  text-decoration: none;
+  font-size: 15px;
+  display: inline;
+  padding: 20px 30px 10px 30px;
+  color: white;
+}
+
+#greeting, #myAlbumInx {
+  margin: 30px;
+}
+
+
 .slideme {
-max-width: 990px;
-max-height: 450px;
+/*max-width: 990px;*/
+max-height: 580px;
 width: 100%;
-height: 100%;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+/*height: 100%;*/
+}
+
+.sliding_banner {
+  width: 1440px;
+  height: 650px;
+}
+
+.allPaintings {
+    display: inline-block;
+}
+
+#mainPageGallery, #albumPageGallery {
+  height: 200px;
+  margin: 20px;
+  margin-bottom: 5px;
 }

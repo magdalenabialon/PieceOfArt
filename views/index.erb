@@ -1,13 +1,20 @@
-<link rel="stylesheet" href="stylesheets/slideme.css">
-
 
 <div id='banner'>
   <ul class='slideme'>
     <li><img class = 'sliding_banner' src="/images/Birth_of_Venus_Botticelli.jpg" alt=""></li>
-    <li><img class = 'sliding_banner' src="/images/Rae_-_Water_Nymphs_(color).png" alt=""></li>
+    <li><img class = 'sliding_banner' src="/images/Rae_-_Water_Nymphs_(color).jpg" alt=""></li>
     <li><img class = 'sliding_banner' src="/images/img.jpg" alt=""></li>
     <li><img class = 'sliding_banner' src="/images/Siemiradski_Fackeln.jpg" alt=""></li>
   </ul>
+</div>
+
+
+<div id='menu_index'>
+
+    <%if logged_in?%>
+      <h4 id = 'greetIndex'>hi there <%= current_user.name.capitalize %></h4>
+    <%end%>
+
 </div>
 
 
@@ -15,21 +22,18 @@
 
   <%if !logged_in?%>
     <form action="/session" method = "post">
-      <label for="">email</label>
-      <input type="text" name = "email">
-      <label for="">password</label>
-      <input type="password" name = "password">
+      <input type="text" placeholder="email" name = "email">
+      <input type="password" placeholder="password" name = "password">
       <button>login</button>
     </form>
   <%end%>
 
   <%if logged_in?%>
-    <h3>Hello <%= current_user.name %></h3>
-    <a href="/my_album">my album</a>
     <form action="/session" method = "post">
       <input type="hidden" name ="_method" value = 'delete'>
-      <button>logout</button>
+      <button id ='logoutBtn'>logout</button>
     </form>
+    <a id = 'myAlbumInx' href = "/my_album"> my album </a>
   <%end%>
 
 
@@ -47,17 +51,19 @@
 
     <% @top_ordered_paintgs.each do |painting| %>
 
-      <h2> <a href="/painting_detail/<%= painting.id %>"> <%= painting.title %> </a> </h2>
-      <a href="/painting_detail/<%= painting.id %>"> <img src = " <%= painting.img_url %> "> </a>
+    <div class="allPaintings">
 
-      <form action="/painting/<%=painting.id%>/likes" method = "post">
-        <input type="hidden" name ="_method" value = 'put'>
-        <h5>Likes: <%= painting.likes_count %></h5>
-        <%if logged_in?%>
-          <button onclick = "this.style.backgroundColor='blue' ">Like</button>
-        </form>
-       <% end %>
+        <a href="/painting_detail/<%= painting.id %>"> <img id = 'mainPageGallery' src = " <%= painting.img_url %> "> </a>
+        <h2> <a href="/painting_detail/<%= painting.id %>"> <%= painting.title %> </a> </h2>
 
+        <form action="/painting/<%=painting.id%>/likes" method = "post">
+          <input type="hidden" name ="_method" value = 'put'>
+          <h5>Likes: <%= painting.likes_count %></h5>
+          <%if logged_in?%>
+            <button onclick = "this.style.backgroundColor='blue' ">Like</button>
+          </form>
+         <% end %>
+    </div>
 
     <% end %>
 
@@ -74,12 +80,12 @@
 
 <script>
 $('#banner').slideme({
-  interval : 2000,
+  interval : 3000,
   speed : 900,
   autoslide : true,
   loop : true,
   autoslideHoverStop : false,
-  arrows: true,
+  // arrows: true,
   // pagination: 'numbers',
     resizable: {
     width: 990,
