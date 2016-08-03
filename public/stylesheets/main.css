@@ -1,6 +1,7 @@
 body {
   text-align: center;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 #menu_layout {
@@ -17,8 +18,9 @@ body {
 }
 
 #login_section, #myAlbumSection, #paintDetBanner {
-  height: 250px;
+  height: 240px;
   background-color: black;
+  /*border-bottom: 40px solid #1a1a1a;*/
   margin: 0;
 }
 
@@ -28,12 +30,14 @@ body {
   display: inline;
   padding: 20px 30px 10px 30px;
   color: white;
+  font-family: 'Quicksand', sans-serif;
 }
 
 #greeting, #myAlbumInx {
   margin: 30px;
+  font-family: 'Quicksand', sans-serif;
+  padding: 20px;
 }
-
 
 .slideme {
 /*max-width: 990px;*/
@@ -51,11 +55,53 @@ background-position: center;
 }
 
 .allPaintings {
-    display: inline-block;
+  display: inline-block;
+  margin-top: 50px;
 }
 
 #mainPageGallery, #albumPageGallery {
-  height: 200px;
-  margin: 20px;
-  margin-bottom: 5px;
+  height: 300px;
+  width: 300px;
+  margin: 5px 20px 0 20px;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #b7e1fc;
+}
+
+#homeAlbumGallery{
+  background-color: #333333;
+  padding-top: 70px;
+}
+
+#editPage, #createPage {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#greetIndex {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  letter-spacing: 2pt;
+  word-spacing: 5pt;
+  font-weight: lighter;
+  color: #b7e1fc;
+  margin: 50px;
+}
+
+.bigPainTitle, .painTitle, .painTitlealbum {
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  color: white;
+  margin: 0;
+}
+
+#likes_album, .painTitlealbum {
+  color: black;
+}
+
+h4, h5 {
+  margin: 0;
+  color: white;
+  display: inline-block;
+  font-family: 'Quicksand', sans-serif;
 }

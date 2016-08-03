@@ -1,32 +1,34 @@
+<div id = 'editPage'>
+
+  <form action="/painting/<%= @painting.id %>/edit" method = "post">
+    <input type="hidden" name="_method" value="put">
+
+    <label for="">title</label>
+    <input type="text" name = "title" value ="<%= @painting.title%>">
+
+    <label for="">image url</label>
+    <input type="text" name = "img_url" value = "<%= @painting.img_url%>">
+
+    <label for="">author</label>
+    <input type="text" name = "author" value ="<%= @painting.author%>">
+
+    <label for="">century</label>
+    <input type="text" name = "century" value ="<%= @painting.century%>">
+
+    <label for="">style</label>
+    <input type="text" name = "style" value = "<%= @painting.style%>">
+
+    <label for="">Seen live</label>
+    <input type="text" name = "seen_live" value ="<%= @painting.seen_live%>">
+
+    <label for="">city</label>
+    <input type="text" name = "city" value ="<%= @painting.city%>">
+
+    <label for="">museum</label>
+    <input type="text" name = "museum" value ="<%= @painting.museum%>">
 
 
-<form action="/painting/<%= @painting.id %>/edit" method = "post">
-  <input type="hidden" name="_method" value="put">
+    <button>update</button>
+  </form>
 
-  <label for="">title</label>
-  <input type="text" name = "title" value ="<%= @painting.title%>">
-
-  <label for="">image url</label>
-  <input type="text" name = "img_url" value = "<%= @painting.img_url%>">
-
-  <label for="">author</label>
-  <input type="text" name = "author" value ="<%= @painting.author%>">
-
-  <label for="">century</label>
-  <input type="text" name = "century" value ="<%= @painting.century%>">
-
-  <label for="">style</label>
-  <input type="text" name = "style" value = "<%= @painting.style%>">
-
-  <label for="">Seen live</label>
-  <input type="text" name = "seen_live" value ="<%= @painting.seen_live%>">
-
-  <label for="">city</label>
-  <input type="text" name = "city" value ="<%= @painting.city%>">
-
-  <label for="">museum</label>
-  <input type="text" name = "museum" value ="<%= @painting.museum%>">
-
-
-  <button>update</button>
-</form>
+</div>
