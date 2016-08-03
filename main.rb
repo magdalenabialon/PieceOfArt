@@ -35,9 +35,9 @@ get '/' do
 
   @paintings = Painting.all
   @liked_paintings = Painting.joins(:likes).group(:painting_id).count(:painting_id)
-  @top_ordered_paintgs = Painting.select("count(painting_id) as likes_count, title, img_url")
+  @top_ordered_paintgs = Painting.select("count(painting_id) as likes_count, title, img_url, paintings.id")
     .joins(:likes)
-    .group(:painting_id, :title, :img_url)
+    .group('painting_id, title, img_url, paintings.id')
     .order('likes_count desc')
   # @top_ordered_paintgs.save
 
