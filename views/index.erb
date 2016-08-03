@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="stylesheets/slideme.css">
 
 <div id='banner'>
   <ul class='slideme'>
@@ -31,7 +32,7 @@
   <%if logged_in?%>
     <form action="/session" method = "post">
       <input type="hidden" name ="_method" value = 'delete'>
-      <button id ='logoutBtn'>logout</button>
+      <button id ='logoutBtnIndex'>logout</button>
     </form>
     <a id = 'myAlbumInx' href = "/my_album"> my album </a>
   <%end%>
