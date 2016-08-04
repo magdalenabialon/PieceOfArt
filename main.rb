@@ -159,7 +159,7 @@ end
 get '/painting_detail/:id' do
 
   @painting = Painting.find(params[:id])
-  @location = Geocoder.coordinates(@painting.city)
+  # @location = Geocoder.coordinates(@painting.city)
 
   @all_comments = @painting.comments.all
   erb :painting_detail
@@ -175,7 +175,7 @@ get '/results' do
   # binding.pry
   if @painting
     redirect to "/painting_detail/#{@painting.id}"
-    # erb :painting_detail                                #this is silly >Magda<, need to redirct
+    # erb :painting_detail                                #this is silly Magda>>, need to redirct
   else
     redirect back
   end

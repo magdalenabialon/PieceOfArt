@@ -19,9 +19,8 @@
 
 
 <div id = 'googLocation'>
-  <h6>Map</h6>
-  <p><%=@location%></p>
-  
+  <h2>Coordinates: <%=@painting.latitude%>  <%=@painting.longitude%></h2>
+  <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@painting.latitude%>,<%=@painting.longitude%>&zoom=12&size=400x400&key=AIzaSyA4uVG3OqwRc6lvImkq8wBNkQUE2mu7CSM">
 
 
 </div>
