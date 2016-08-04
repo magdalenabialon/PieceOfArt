@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'pry'
+require 'geocoder'
 
 require_relative 'db_config'
 
@@ -38,6 +39,11 @@ def index
   end
 end
 
+
+
+def googLocation
+  Painting.connection
+end
 
 
 
@@ -95,8 +101,6 @@ post '/signup' do
 end
 
 
-
-
 get '/my_album' do
   @paintings = current_user.paintings
   erb :my_album
@@ -150,13 +154,19 @@ end
 
 
 
-
+#   *********************************************************
 #                    ******* DISPLAY PAINTING'S DETAILS
 get '/painting_detail/:id' do
+
   @painting = Painting.find(params[:id])
+  @location = Geocoder.coordinates(@painting.city)
+
   @all_comments = @painting.comments.all
   erb :painting_detail
 end
+
+#   ********************************************************
+
 
 
 get '/results' do
@@ -234,6 +244,15 @@ end
 
 
 
+
+
+# <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+#
+#   <ul>
+#   <% for location in @location.nearbys(10) %>
+#     <li><%= link_to location.city, location %> (<%= location.distance.round(2) %> miles)</li>
+#   <% end %>
+#   </ul>
 
 
 # in models/paintings.rb:

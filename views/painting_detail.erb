@@ -18,6 +18,14 @@
 <h2> City: <%= @painting.city %> </h2>
 
 
+<div id = 'googLocation'>
+  <h6>Map</h6>
+  <p><%=@location%></p>
+  
+
+
+</div>
+
 
 
 <%if logged_in? && @painting.user_id == current_user.id %>
