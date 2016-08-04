@@ -122,7 +122,7 @@ end
 
 
 
-#  ******* CREATE NEW POSITION
+#                    ******* CREATE NEW POSITION
 get '/create' do
   erb :create
 end
@@ -151,7 +151,7 @@ end
 
 
 
-#  ******* DISPLAY PAINTING'S DETAILS
+#                    ******* DISPLAY PAINTING'S DETAILS
 get '/painting_detail/:id' do
   @painting = Painting.find(params[:id])
   @all_comments = @painting.comments.all
@@ -173,7 +173,7 @@ end
 
 
 
-#  ******* EDIT PAINTING
+#                        ******* EDIT PAINTING
 get '/painting/:id/edit' do
   @user = User.find_by(email: params[:email])
   @painting = Painting.find(params[:id])
@@ -194,7 +194,7 @@ end
 
 
 
-#  ******* DELETE PAINTING
+#                        ******* DELETE PAINTING
 delete '/painting/:id' do
   painting = Painting.find(params[:id])
   painting.destroy
@@ -203,7 +203,7 @@ end
 
 
 
-#  ******* COMMENT FUNCTIONALITY
+#                         ******* COMMENT FUNCTIONALITY
 post '/painting/:id' do
   @comment = Comment.new
   @comment.comment = params[:comment]
@@ -245,15 +245,8 @@ end
 
 
 
-# [2] pry(main)> u1=User.new  => #<User:0x007fb1ab5c0c10 id: nil, name: nil, email: nil, password_digest: nil>
-# [3] pry(main)> u1.name = 'magda'  => "magda"
-# [4] pry(main)> u1.email = 'mb@g.co'  => "mb@g.co"
-# [5] pry(main)> u1.password = 'cake'  => "cake"
-
-# [8] pry(main)> u2 = User.new  => #<User:0x007fb1ab713a40 id: nil, name: nil, email: nil, password_digest: nil>
-# [9] pry(main)> u2.name = 'dt'   => "dt"
-# [10] pry(main)> u2.email = 'dt@ga.co'  => "dt@ga.co"
-# [11] pry(main)> u2.password = 'pudding'  => "pudding"
-#dz@.com nope
-#harry@.ga bot
-#s@.co >> 123123
+# mb@g.co > cake
+#dt@ga.co > pudding
+#dz@.com > nope
+#harry@.ga > bot
+#s@.co > 123123
