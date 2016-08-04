@@ -285,7 +285,7 @@ input:hover {
 }
 
 #editPage {
-  padding-bottom: 210px;
+  padding-bottom: 150px;
   padding-top: 150px;
   /*width: 800px;*/
   width: 80%;
@@ -319,4 +319,8 @@ li {
 
 .signupIn{
   width: 60%;
+}
+
+#createPage{
+  width: 80%;
 }
