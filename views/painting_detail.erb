@@ -1,63 +1,69 @@
 
-<div id= 'ptgDetWrapper'>
-  <div id = 'ptgMainDetail'>
-    <img src = "<%= @painting.img_url %> ">
-  </div>
+<div id='ptgImgWrapper'>
 
-  <div id = 'description'>
-    <h2> Title: <%= @painting.title %> </h2>
-    <h2> Author: <%= @painting.author %> </h2>
-    <h2> Century: <%= @painting.century %> </h2>
-    <h2> Style: <%= @painting.style %> </h2>
-    <h2> Seen live: <%= @painting.seen_live %> </h2>
-    <h2> City: <%= @painting.city %> </h2>
-
-    <div id = 'googLocation'>
-      <h2>Coordinates: <%=@painting.latitude%>  <%=@painting.longitude%></h2>
-      <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@painting.latitude%>,<%=@painting.longitude%>&zoom=12&size=400x400&key=AIzaSyA4uVG3OqwRc6lvImkq8wBNkQUE2mu7CSM">
-    </div>
-
-  </div>
+  <img id="paintingImage"src = "<%= @painting.img_url %> ">
 
 </div>
 
 
-<%if logged_in? && @painting.user_id == current_user.id %>
-  <a href="/painting/<%= @painting.id %>/edit"> edit </a>
 
-  <form action="/painting/<%= @painting.id %>" method = "post">
-    <input type="hidden" name = "_method" value ="delete">
-    <button>delete</button>
-  </form>
+<div id = 'ptgDetailWrapper'>
 
-<%end%>
+    <div id = 'description'>
+      <h2 id = 'title'> <%= @painting.title %> </h2>
+      <h2> Author: <%= @painting.author %> </h2>
+      <h2> Century: <%= @painting.century %> </h2>
+      <h2> Style: <%= @painting.style %> </h2>
+      <h2> Seen live: <%= @painting.seen_live %> </h2>
+      <h2> City: <%= @painting.city %> </h2>
+
+      <div id = 'googLocation'>
+        <h6>Coordinates: <%=@painting.latitude%> * <%=@painting.longitude%></h6>
+        <img id = 'map' src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@painting.latitude%>,<%=@painting.longitude%>&zoom=12&size=250x250&style=feature:road.local|element:labels|color:0xffffff&key=AIzaSyA4uVG3OqwRc6lvImkq8wBNkQUE2mu7CSM">
+      </div>
+    </div>
+
+    <div id = 'comments'>
+      <%if logged_in? && @painting.user_id == current_user.id %>
+        <a href="/painting/<%= @painting.id %>/edit"> edit </a>
+
+        <form action="/painting/<%= @painting.id %>" method = "post">
+          <input type="hidden" name = "_method" value ="delete">
+          <button>delete</button>
+        </form>
+      <%end%>
 
 
 
-<%if logged_in? %>
-   <form action="/painting/<%= @painting.id %>" method="post">
-      <textarea type="text" maxlength='500'  name = "comment" ></textarea>
-      <button>Add comment</button>
-   </form>
+      <%if logged_in? %>
 
-   <% @all_comments.each do |comment| %>
-     <p> author: user <%=comment.user_id %> </p>
-     <p> <%= comment.comment %> </p>
+         <form action="/painting/<%= @painting.id %>" method="post">
+            <textarea type="text" maxlength='500'  name = "comment" ></textarea>
+            <button>Add comment</button>
+         </form>
 
-     <%if comment.user_id == current_user.id %>
-       <form action="/paintings/update_comment/<%= comment.id %>" method = "post">
-         <input type="hidden" name="_method" value="put">
-           <input type="text" name = "comment" value ="<%= comment.comment %>">
-         <button id = "edit">edit comment</button>
-       </form>
-     <%end%>
+         <% @all_comments.each do |comment| %>
+           <p> author: user <%=comment.user_id %> </p>
+           <p> <%= comment.comment %> </p>
 
-     <%if comment.user_id == current_user.id ||  @painting.user_id == current_user.id%>
-       <form action="/paintings/delete/<%= comment.id %>" method = "post">
-         <input type="hidden" name = "_method" value ="delete">
-         <button id = "delete">delete comment</button>
-       </form>
-     <%end%>
+             <%if comment.user_id == current_user.id %>
+               <form action="/paintings/update_comment/<%= comment.id %>" method = "post">
+                 <input type="hidden" name="_method" value="put">
+                   <input type="text" name = "comment" value ="<%= comment.comment %>">
+                 <button id = "edit">edit comment</button>
+               </form>
+             <%end%>
 
-  <% end %>
-<% end %>
+             <%if comment.user_id == current_user.id ||  @painting.user_id == current_user.id%>
+               <form action="/paintings/delete/<%= comment.id %>" method = "post">
+                 <input type="hidden" name = "_method" value ="delete">
+                 <button id = "delete">delete comment</button>
+               </form>
+             <%end%>
+
+        <% end %>
+
+      <% end %>
+    </div>
+
+</div>

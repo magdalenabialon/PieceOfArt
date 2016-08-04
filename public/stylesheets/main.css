@@ -296,15 +296,19 @@ input:hover {
 }
 
 footer {
-  padding-top: 50px;
-  height: 100px;
+  padding: 7px 0 10px 0;
+  height: 30px;
   background-color: black;
   color: white;
   font-family:'Quicksand', sans-serif;
   font-size: 12px;
   letter-spacing: 3pt;
   word-spacing: 8pt;
+  position:fixed;
+  bottom:0;
+  width: 100%;
 }
+
 
 span {
   font-family: 'Tangerine', cursive;
@@ -328,4 +332,52 @@ li {
 
 #createPage{
   width: 80%;
+}
+
+#ptgImgWrapper{
+ display: inline-block;
+ width: 53%;
+ margin-bottom: 0px;
+
+}
+
+#ptgDetailWrapper{
+  display: inline-block;
+  width: 47%;
+  float:right;
+  margin-top: 20px;
+}
+
+#ptgMainDetail{
+  /*width: 600px;*/
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+#paintingImage {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  max-height: 800px;
+}
+
+#title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px;
+}
+
+h2 {
+  font-family:'Quicksand', sans-serif;
+  font-size: 15px;
+}
+
+h6 {
+  font-family:'Quicksand', sans-serif;
+  font-size: 9px;
+}
+
+#map{
+  opacity: 0.4;
+  width: 23%;
 }

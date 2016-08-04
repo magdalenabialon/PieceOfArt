@@ -2,7 +2,7 @@
 <div id = 'myAlbumSection'>
 
   <%if logged_in?%>
-    <a  id = "createPosition" href="/create">create new Position</a>
+    <a id = "createPosition" href="/create">create new Position</a>
     <form action="/results" method = "get">
       <input class = "searchInput" placeholder = "painting title"  name = "painting_search" >
       <button id = "search">search</button>
@@ -24,7 +24,7 @@
         <form action="/painting/<%=painting.id%>/likes" method = "post">
           <input type="hidden" name ="_method" value = 'put'>
           <h5 id='likes_album'><%= painting.likes.count %></h5>
-          <button id = 'likebtn' onclick = "this.style.backgroundColor='lightgrey' ">Like</button>
+          <button id = 'likebtn' onclick = "this.style.backgroundColor='grey' ">Like</button>
         </form>
       </div>
     <% end %>
