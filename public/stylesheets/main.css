@@ -1,14 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 body {
   text-align: center;
   margin: 0 auto;
-  box-sizing: border-box;
 }
 
 #menu_layout {
-  height: 0;
+  height: 40px;
   margin: 0;
-  /*background-color: cyan;*/
+  background-color: black;
   text-align: left;
+}
+li{
+  display: inline-block;
 }
 
 #menu_index {
@@ -17,11 +24,17 @@ body {
   background-color: black;
 }
 
-#login_section, #myAlbumSection, #paintDetBanner {
-  height: 240px;
+
+#login_section, #myAlbumSection {
+  height: 280px;
   background-color: black;
   /*border-bottom: 40px solid #1a1a1a;*/
   margin: 0;
+}
+
+#myAlbumSection{
+  padding-top: 40px;
+  height: 230px;
 }
 
 #login_section {
@@ -38,10 +51,10 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
-#greeting, #myAlbumInx {
-  margin: 30px;
+ #myAlbumInx {
+  margin: 60px;
   font-family: 'Quicksand', sans-serif;
-  padding: 20px;
+  padding: 40px;
 }
 
 .slideme {
@@ -92,6 +105,25 @@ background-position: center;
   margin: 50px;
 }
 
+#createPosition{
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+  letter-spacing: 2pt;
+  word-spacing: 5pt;
+  font-weight: lighter;
+  color: #b7e1fc;
+  margin: -50px;
+  padding-top: 20px;
+  text-decoration: none;
+}
+/*#myAlbumInx{
+  font-family: 'Great Vibes', cursive;
+  font-size: 20px;
+  color: #b7e1fc;
+  letter-spacing: 3pt;
+  word-spacing: 2pt;
+}*/
+
 .bigPainTitle, .painTitle, .painTitlealbum {
   text-decoration: none;
   font-family: 'Cinzel', serif;
@@ -111,7 +143,7 @@ h4, h5 {
   font-family: 'Quicksand', sans-serif;
 }
 
-input {
+/*input {
     cursor: auto;
     background-color: white;
     height: 35px;
@@ -121,42 +153,70 @@ input {
     text-align: center;
     border: 1px solid red;
     font-family: 'Quicksand', sans-serif;
-}
+}*/
 
-.loginInput {
+.loginInput, .searchInput {
   cursor: auto;
-  background-color: white;
+  background-color: #333333;
   height: 25px;
-  width: 300px;
+  width: 22%;
   color: grey;
   font-size: 1em;
   text-align: center;
-  border: 1px solid red;
+  border: 1px solid grey;
   font-family: 'Quicksand', sans-serif;
 }
-/*#search {
 
-} */
-
-#logoutBtn{
-    background-color: #3eb0f7;
-    border: 1px solid lightgrey;
-    height: 20px;
-    width: 70px;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1em;
-    color: white;
-    margin-bottom: 30px;
+.searchInput {
+  margin-top: 50px;
 }
 
-#loginBtn {
-    background-color: #3eb0f7;
-    border: 1px solid lightgrey;
-    height: 30px;
-    width: 90px;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1em;
-    color: white;
+.loginInput:hover{
+  cursor: auto;
+  background-color: #DAE0F2;
+  height: 25px;
+  width: 22%;
+  color: black;
+  font-size: 1em;
+  text-align: center;
+  border: 1px solid grey;
+  font-family: 'Quicksand', sans-serif;
+}
+.searchInput:hover{
+  cursor: auto;
+  background-color: #DAE0F2;
+  height: 25px;
+  width: 22%;
+  color: black;
+  font-size: 1em;
+  text-align: center;
+  border: 1px solid grey;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+
+#logoutBtn{
+  background-color: black;
+  border: none;
+  padding-left: 20px;
+  /*border-radius: 30px;*/
+  height: 35px;
+  width: 40px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1em;
+  color: white;
+  /*margin-bottom: 30px;*/
+}
+
+#loginBtn, {
+  background-color: #3eb0f7;
+  border: 1px solid grey;
+  height: 30px;
+  width: 90px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1em;
+  color: white;
 }
 
 #likebtn {
@@ -169,7 +229,7 @@ input {
   color: white;
 }
 
-#logoutBtnIndex, #loginBtnIndex{
+#logoutBtnIndex, #loginBtnIndex, #search {
     background-color: black;
     border: 1px solid grey;
     border-radius: 30px;
@@ -178,9 +238,15 @@ input {
     font-family: 'Tangerine', cursive;
     font-size: 25px;
     color: white;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 50px;
 }
 
+#search{
+  height: 49px;
+  width: 49px;
+  border-radius: 35px;
+}
 
 input {
   margin: 20px;
@@ -188,8 +254,14 @@ input {
 
 #signup {
   text-decoration: none;
-  color: white;
+  color: #b7e1fc;
   font-family: 'Tangerine', cursive;
-  font-size: 20px;
+  font-size: 28px;
+  /*border: 1px solid grey;
+  border-radius: 40px;
+  padding: 5px 10px 13px 10px;*/
+}
 
+#editPage{
+  margin: 30px;
 }

@@ -13,18 +13,36 @@
 
 
     <div id='menu_layout'>
+      <nav>
+        
+          <ul>
+            <li>
+              <a id = 'home_link' href = "/"> home </a>
+            </li>
+            <li>
+              <%if logged_in?%>
+                <a id = 'myAlbumLink' href = "/my_album"> my album </a>
+              <%end%>
+            </li>
+            <li>
+              <%if logged_in?%>
+                <h4 id = 'greeting'><%= current_user.name.capitalize %></h4>
+              <%end%>
+            </li>
+            <li>
+              <%if logged_in?%>
+                <form action="/session" method = "post">
+                  <input type="hidden" name ="_method" value = 'delete'>
+                  <button id ='logoutBtn'>logout</button>
+                </form>
+              <%end%>
+            </li>
+            <li></li>
+          </ul>
 
-        <a id = 'home_link' href = "/"> home </a>
-        <%if logged_in?%>
-          <a id = 'myAlbumLink' href = "/my_album"> my album </a>
-          <h4 id = 'greeting'><%= current_user.name.capitalize %></h4>
+      </nav>
 
-          <form action="/session" method = "post">
-            <input type="hidden" name ="_method" value = 'delete'>
-            <button id ='logoutBtn'>logout</button>
-          </form>
 
-        <%end%>
 
     </div>
 

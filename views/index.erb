@@ -39,12 +39,12 @@
       <input type="hidden" name ="_method" value = 'delete'>
       <button id ='logoutBtnIndex'>logout</button>
     </form>
-    <a id = 'myAlbumInx' href = "/my_album"> my album </a>
+    <a id = 'myAlbumInx' href = "/my_album"> my album  &#8605 </a>
   <%end%>
 
 
   <form action="/results" method="get">
-    <input type="text" placeholder = "painting title"  name = "painting_search" >
+    <input class = "searchInput" type="text" placeholder = "painting title"  name = "painting_search" >
     <button id = "search">search</button>
   </form>
 
@@ -72,13 +72,14 @@
 </div>
 
 
-
+<link rel="stylesheet" href="stylesheets/index.css">
 
 
 
 
 <script src="https://cdn.jsdelivr.net/jquery/3.1.0/jquery.min.js"></script>
 <script src="javascripts/slideme.js"></script>
+
 
 <script>
 $('#banner').slideme({

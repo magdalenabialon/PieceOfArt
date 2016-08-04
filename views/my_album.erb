@@ -2,14 +2,11 @@
 <div id = 'myAlbumSection'>
 
   <%if logged_in?%>
-
-    <a  href="/create">create new position</a>
-
+    <a  id = "createPosition" href="/create">create new Position</a>
     <form action="/results" method = "get">
-      <input type="text" placeholder = "painting title"  name = "painting_search" >
+      <input class = "searchInput" placeholder = "painting title"  name = "painting_search" >
       <button id = "search">search</button>
     </form>
-
   <%end%>
 
 </div>

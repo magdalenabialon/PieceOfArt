@@ -1,13 +1,4 @@
 
-<div id = 'paintDetBanner'>
-  <%if logged_in?%>
-
-  <form action="/session" method = "post">
-    <input type="hidden" name ="_method" value = 'delete'>
-    <button>logout</button>
-  </form>
-  <%end%>
-</div>
 
 <img src = "<%= @painting.img_url %> ">
 <h2> Title: <%= @painting.title %> </h2>
@@ -21,8 +12,6 @@
 <div id = 'googLocation'>
   <h2>Coordinates: <%=@painting.latitude%>  <%=@painting.longitude%></h2>
   <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@painting.latitude%>,<%=@painting.longitude%>&zoom=12&size=400x400&key=AIzaSyA4uVG3OqwRc6lvImkq8wBNkQUE2mu7CSM">
-
-
 </div>
 
 
