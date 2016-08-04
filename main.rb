@@ -81,7 +81,7 @@ end
 
 
 
-#  ******* SIGN UP
+#                    ******* SIGN UP
 get '/signup' do
   erb :signup
 end
@@ -108,7 +108,7 @@ end
 
 
 
-#  ******* LIKE FUNCTIONALITY
+#                     ******* LIKE FUNCTIONALITY
 put '/painting/:id/likes' do
    @painting = Painting.find_by(id: params[:id])
 
@@ -126,7 +126,7 @@ end
 
 
 
-#                    ******* CREATE NEW POSITION
+#                      ******* CREATE NEW POSITION
 get '/create' do
   erb :create
 end
@@ -154,8 +154,8 @@ end
 
 
 
-#   *********************************************************
-#                    ******* DISPLAY PAINTING'S DETAILS
+
+#                    ******* DISPLAY PAINTING'S DETAILS + location
 get '/painting_detail/:id' do
 
   @painting = Painting.find(params[:id])
@@ -165,7 +165,6 @@ get '/painting_detail/:id' do
   erb :painting_detail
 end
 
-#   ********************************************************
 
 
 
@@ -239,33 +238,3 @@ put '/paintings/update_comment/:id' do
   @comment.update(comment: params[:comment])
   redirect back
 end
-
-
-
-
-
-
-
-# <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
-#
-#   <ul>
-#   <% for location in @location.nearbys(10) %>
-#     <li><%= link_to location.city, location %> (<%= location.distance.round(2) %> miles)</li>
-#   <% end %>
-#   </ul>
-
-
-# in models/paintings.rb:
-# # geocoded_by :city  #use column name
-# # after_validation :geocode
-# end
-
-
-
-
-
-# mb@g.co > cake
-#dt@ga.co > pudding
-#dz@.com > nope
-#harry@.ga > bot
-#s@.co > 123123

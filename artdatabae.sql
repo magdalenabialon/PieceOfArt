@@ -56,3 +56,11 @@ CREATE TABLE likes (
   painting_id INTEGER,
   user_id INTEGER
 );
+
+
+# mb@g.co > cakeQ
+#dt@ga.co > puddingW
+#dz@.com > nopeE
+#harry@.ga > botR
+#s@.co > 123123T
+#dp@.co > danusiaY
