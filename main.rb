@@ -55,6 +55,8 @@ get '/' do
 end
 
 
+
+#  ******* CREATE SESSION
 post '/session' do
   user = User.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
@@ -73,7 +75,7 @@ end
 
 
 
-#*******
+#  ******* SIGN UP
 get '/signup' do
   erb :signup
 end
@@ -85,14 +87,13 @@ post '/signup' do
   user.name = params[:user_name]
   user.email = params[:user_email]
   user.password = params[:user_password]
-  # user.admin = false
   user.save
 
   session[:id] = user.id
 
   redirect '/'
 end
-#*******
+
 
 
 
@@ -102,6 +103,8 @@ get '/my_album' do
 end
 
 
+
+#  ******* LIKE FUNCTIONALITY
 put '/painting/:id/likes' do
    @painting = Painting.find_by(id: params[:id])
 
@@ -119,6 +122,7 @@ end
 
 
 
+#  ******* CREATE NEW POSITION
 get '/create' do
   erb :create
 end
@@ -142,18 +146,17 @@ post '/create' do
     @painting.save
 
     redirect to "/my_album?#{@painting.id}"
-
 end
 
 
 
+
+#  ******* DISPLAY PAINTING'S DETAILS
 get '/painting_detail/:id' do
   @painting = Painting.find(params[:id])
   @all_comments = @painting.comments.all
   erb :painting_detail
 end
-
-
 
 
 get '/results' do
@@ -162,7 +165,7 @@ get '/results' do
   # binding.pry
   if @painting
     redirect to "/painting_detail/#{@painting.id}"
-    # erb :painting_detail
+    # erb :painting_detail                                #this is silly >Magda<, need to redirct
   else
     redirect back
   end
@@ -170,7 +173,7 @@ end
 
 
 
-
+#  ******* EDIT PAINTING
 get '/painting/:id/edit' do
   @user = User.find_by(email: params[:email])
   @painting = Painting.find(params[:id])
@@ -182,7 +185,6 @@ get '/painting/:id/edit' do
 end
 
 
-
 put '/painting/:id/edit' do
   @painting = Painting.find(params[:id])
   # binding.pry
@@ -192,6 +194,7 @@ end
 
 
 
+#  ******* DELETE PAINTING
 delete '/painting/:id' do
   painting = Painting.find(params[:id])
   painting.destroy
@@ -200,20 +203,17 @@ end
 
 
 
+#  ******* COMMENT FUNCTIONALITY
 post '/painting/:id' do
-
   @comment = Comment.new
   @comment.comment = params[:comment]
   @comment.painting_id = params[:id]
   @comment.user_id = current_user.id
   @comment.save
   @painting = Painting.find(params[:id])
-
   @all_comments = @painting.comments.all
   redirect to "/painting_detail/#{params[:id]}"
-
 end
-
 
 
 delete '/paintings/delete/:id' do
@@ -256,3 +256,4 @@ end
 # [11] pry(main)> u2.password = 'pudding'  => "pudding"
 #dz@.com nope
 #harry@.ga bot
+#s@.co >> 123123
