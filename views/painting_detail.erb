@@ -24,14 +24,19 @@
     </div>
 
     <div id = 'comments'>
-      <%if logged_in? && @painting.user_id == current_user.id %>
-        <a href="/painting/<%= @painting.id %>/edit"> edit </a>
-
-        <form action="/painting/<%= @painting.id %>" method = "post">
-          <input type="hidden" name = "_method" value ="delete">
-          <button>delete</button>
-        </form>
-      <%end%>
+      <ul>
+        <%if logged_in? && @painting.user_id == current_user.id %>
+          <li>
+            <a id = 'ediPaintingBtn' href="/painting/<%= @painting.id %>/edit"> edit </a>
+          </li>
+          <li>
+            <form action="/painting/<%= @painting.id %>" method = "post">
+              <input type="hidden" name = "_method" value ="delete">
+              <button id = 'deletePainting'>delete</button>
+            </form>
+          </li>
+        <%end%>
+      </ul>
 
 
 
@@ -39,25 +44,25 @@
 
          <form action="/painting/<%= @painting.id %>" method="post">
             <textarea type="text" maxlength='500'  name = "comment" ></textarea>
-            <button>Add comment</button>
+            <button class = "signupSig">comment</button>
          </form>
 
          <% @all_comments.each do |comment| %>
-           <p> author: user <%=comment.user_id %> </p>
-           <p> <%= comment.comment %> </p>
+           <h6> author: user <%=comment.user_id %> </h6>
+           <h3> <%= comment.comment %> </h3>
 
              <%if comment.user_id == current_user.id %>
                <form action="/paintings/update_comment/<%= comment.id %>" method = "post">
                  <input type="hidden" name="_method" value="put">
                    <input type="text" name = "comment" value ="<%= comment.comment %>">
-                 <button id = "edit">edit comment</button>
+                 <button class = "signupSig">edit</button>
                </form>
              <%end%>
 
              <%if comment.user_id == current_user.id ||  @painting.user_id == current_user.id%>
                <form action="/paintings/delete/<%= comment.id %>" method = "post">
                  <input type="hidden" name = "_method" value ="delete">
-                 <button id = "delete">delete comment</button>
+                 <button class = "signupSig">delete comment</button>
                </form>
              <%end%>
 
