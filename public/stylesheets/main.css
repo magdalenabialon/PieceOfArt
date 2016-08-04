@@ -251,6 +251,23 @@ input:hover {
     margin-bottom: 50px;
 }
 
+#signupSig {
+    background-color: black;
+    border: 1px solid grey;
+    border-radius: 35px;
+    height: 67px;
+    width: 65px;
+    font-family: 'Tangerine', cursive;
+    font-size: 25px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+#signupSig:hover{
+  background-color: #51afea;
+}
+
+
 #search {
   height: 49px;
   width: 49px;
@@ -292,4 +309,14 @@ span {
 li {
   font-family:'Quicksand', sans-serif;
   font-size: 13px;
+}
+
+#signupPage{
+  /*width: 80%;*/
+  padding-bottom: 110px;
+  padding-top: 150px;
+}
+
+.signupIn{
+  width: 60%;
 }
