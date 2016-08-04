@@ -1,19 +1,25 @@
 
+<div id= 'ptgDetWrapper'>
+  <div id = 'ptgMainDetail'>
+    <img src = "<%= @painting.img_url %> ">
+  </div>
 
-<img src = "<%= @painting.img_url %> ">
-<h2> Title: <%= @painting.title %> </h2>
-<h2> Author: <%= @painting.author %> </h2>
-<h2> Century: <%= @painting.century %> </h2>
-<h2> Style: <%= @painting.style %> </h2>
-<h2> Seen live: <%= @painting.seen_live %> </h2>
-<h2> City: <%= @painting.city %> </h2>
+  <div id = 'description'>
+    <h2> Title: <%= @painting.title %> </h2>
+    <h2> Author: <%= @painting.author %> </h2>
+    <h2> Century: <%= @painting.century %> </h2>
+    <h2> Style: <%= @painting.style %> </h2>
+    <h2> Seen live: <%= @painting.seen_live %> </h2>
+    <h2> City: <%= @painting.city %> </h2>
 
+    <div id = 'googLocation'>
+      <h2>Coordinates: <%=@painting.latitude%>  <%=@painting.longitude%></h2>
+      <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@painting.latitude%>,<%=@painting.longitude%>&zoom=12&size=400x400&key=AIzaSyA4uVG3OqwRc6lvImkq8wBNkQUE2mu7CSM">
+    </div>
 
-<div id = 'googLocation'>
-  <h2>Coordinates: <%=@painting.latitude%>  <%=@painting.longitude%></h2>
-  <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@painting.latitude%>,<%=@painting.longitude%>&zoom=12&size=400x400&key=AIzaSyA4uVG3OqwRc6lvImkq8wBNkQUE2mu7CSM">
+  </div>
+
 </div>
-
 
 
 <%if logged_in? && @painting.user_id == current_user.id %>
