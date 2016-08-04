@@ -380,17 +380,18 @@ h6 {
 }
 
 #googLocation {
-  margin: 40px 0 20px 0;
+  margin: 8% 0 20px 0;
 }
 
 #map {
   opacity: 0.5;
   width: 23%;
+  border: 1px solid grey;
 }
 
 #comments {
-  padding-top: 60px;
-  padding-bottom: 20px;
+  padding-top: 8%;
+  padding-bottom: 1%;
 }
 
 #ediPaintingBtn {
@@ -427,6 +428,15 @@ textarea{
 
 h3 {
   font-family:'Quicksand', sans-serif;
-  font-size: 19px;
+  font-size: 21px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+#comWrapper {
   border: 1px solid #51afea;
+  padding-top: 8%;
+  width: 80%;
+  /*height: 100px;*/
+  margin: 0 auto;
 }

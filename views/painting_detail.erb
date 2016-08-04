@@ -48,24 +48,29 @@
          </form>
 
          <% @all_comments.each do |comment| %>
-           <h6> author: user <%=comment.user_id %> </h6>
-           <h3> <%= comment.comment %> </h3>
-
-             <%if comment.user_id == current_user.id %>
-               <form action="/paintings/update_comment/<%= comment.id %>" method = "post">
-                 <input type="hidden" name="_method" value="put">
-                   <input type="text" name = "comment" value ="<%= comment.comment %>">
-                 <button class = "signupSig">edit</button>
-               </form>
-             <%end%>
-
-             <%if comment.user_id == current_user.id ||  @painting.user_id == current_user.id%>
-               <form action="/paintings/delete/<%= comment.id %>" method = "post">
-                 <input type="hidden" name = "_method" value ="delete">
-                 <button class = "signupSig">delete comment</button>
-               </form>
-             <%end%>
-
+             <ul id ="comWrapper">
+               <li>
+                 <h6> author: user <%=comment.user_id %> </h6>
+                 <h3> <%= comment.comment %> </h3>
+               </li>
+               <li>
+                 <%if comment.user_id == current_user.id ||  @painting.user_id == current_user.id%>
+                   <form action="/paintings/delete/<%= comment.id %>" method = "post">
+                     <input type="hidden" name = "_method" value ="delete">
+                     <button class = "signupSig">delete comment</button>
+                   </form>
+                 <%end%>
+               </li>
+               <li>
+                 <%if comment.user_id == current_user.id %>
+                   <form action="/paintings/update_comment/<%= comment.id %>" method = "post">
+                     <input type="hidden" name="_method" value="put">
+                       <li><input type="text" name = "comment" value ="<%= comment.comment %>"></li>
+                     <button class = "signupSig">Edit comment</button>
+                   </form>
+                 <%end%>
+               </li>
+            </ul>
         <% end %>
 
       <% end %>
