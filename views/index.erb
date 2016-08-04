@@ -23,9 +23,9 @@
 
   <%if !logged_in?%>
     <form action="/session" method = "post">
-      <input type="text" placeholder="email" name = "email">
-      <input type="password" placeholder="password" name = "password">
-      <button id= 'loginBtn'>login</button>
+      <input class='loginInput' type="text" placeholder="email" name = "email">
+      <input class='loginInput' type="password" placeholder="password" name = "password">
+      <button id= 'loginBtnIndex'>login</button>
     </form>
   <%end%>
 
@@ -57,7 +57,7 @@
             <input type="hidden" name ="_method" value = 'put'>
             <h5><%= painting.likes_count %></h5>
             <%if logged_in?%>
-              <button class = 'likebtn' onclick = "this.style.backgroundColor='lightgrey' ">Like</button>
+              <button id = 'likebtn' onclick = "this.style.backgroundColor='lightgrey' ">Like</button>
             <% end %>
             </form>
        </div>

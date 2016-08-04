@@ -123,6 +123,17 @@ input {
     font-family: 'Quicksand', sans-serif;
 }
 
+.loginInput {
+  cursor: auto;
+  background-color: white;
+  height: 25px;
+  width: 300px;
+  color: grey;
+  font-size: 1em;
+  text-align: center;
+  border: 1px solid red;
+  font-family: 'Quicksand', sans-serif;
+}
 /*#search {
 
 } */
@@ -148,28 +159,28 @@ input {
     color: white;
 }
 
+#likebtn {
+  background-color: grey;
+  border: 1px solid lightgrey;
+  height: 20px;
+  width: 40px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 10px;
+  color: white;
+}
 
-#logoutBtnIndex{
+#logoutBtnIndex, #loginBtnIndex{
     background-color: black;
     border: 1px solid grey;
-    border-radius: 20px;
-    height: 40px;
+    border-radius: 30px;
+    height: 45px;
     width: 45px;
     font-family: 'Tangerine', cursive;
-    font-size: 18px;
+    font-size: 25px;
     color: white;
     margin-bottom: 30px;
 }
 
-.likebtn {
-    background-color: grey;
-    border: 1px solid lightgrey;
-    height: 20px;
-    width: 40px;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 10px;
-    color: white;
-}
 
 input {
   margin: 20px;
