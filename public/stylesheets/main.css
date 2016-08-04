@@ -185,3 +185,11 @@ input {
 input {
   margin: 20px;
 }
+
+#signup {
+  text-decoration: none;
+  color: white;
+  font-family: 'Tangerine', cursive;
+  font-size: 20px;
+
+}

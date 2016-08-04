@@ -73,6 +73,29 @@ end
 
 
 
+#*******
+get '/signup' do
+  erb :signup
+end
+
+
+post '/signup' do
+
+  user = User.new
+  user.name = params[:user_name]
+  user.email = params[:user_email]
+  user.password = params[:user_password]
+  # user.admin = false
+  user.save
+
+  session[:id] = user.id
+
+  redirect '/'
+end
+#*******
+
+
+
 get '/my_album' do
   @paintings = current_user.paintings
   erb :my_album
@@ -231,3 +254,5 @@ end
 # [9] pry(main)> u2.name = 'dt'   => "dt"
 # [10] pry(main)> u2.email = 'dt@ga.co'  => "dt@ga.co"
 # [11] pry(main)> u2.password = 'pudding'  => "pudding"
+#dz@.com nope
+#harry@.ga bot
