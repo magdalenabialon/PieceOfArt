@@ -1,6 +1,6 @@
 # Piece Of Art
 
-## See it [online](https://magdalenabialon.github.io/TicTacToe/)
+## See it [online](https://magdalenabialon.github.io/)
 ![](http://1.bp.blogspot.com/-E_KisiFqhKw/U017Gz3InjI/AAAAAAAABY8/cPo3foI-NHU/s1600/275225_Papel-de-Parede-O-Nascimento-de-Venus-Botticelli_1920x1080.jpg)
 
 
@@ -27,7 +27,7 @@ Improve searching functionality, let users update their account
 
 ##Workflow:
 
-![](https://trello.com/b/8sqKfyFn/project2)
+https://trello.com/b/8sqKfyFn/project2
 ![](https://trello-attachments.s3.amazonaws.com/57a3eedcceaa0e1d950593fa/2048x2732/22fa3fb6dd94552c357660f26e76c081/image1.PNG)
 
 - 1 Started with the end in mind (wireframing, user stories, pseudocode)
