@@ -22,19 +22,19 @@ CREATE TABLE paintings (
   seen_live VARCHAR(10),
   city VARCHAR(300),
   museum VARCHAR(100),
-  user_id INTEGER
+  user_id INTEGER,
+  latitude real,                   |
+  longitude real
 );
 
 INSERT INTO paintings (title, img_url, author, century, style, seen_live, city) VALUES
               ('The Kiss', 'http://www.myfreewallpapers.net/artistic/wallpapers/gustav-klimt-the-kiss.jpg', 'Gustav Klimt','XX', 'Art Nouveau', 'yes', 'Vienna');
 
 
-ALTER TABLE paintings ADD museum VARCHAR(100);
-
-
-
-ALTER TABLE paintings ADD latitude real;
-ALTER TABLE paintings ADD longitude real;
+-- ALTER TABLE paintings ADD museum VARCHAR(100);
+--
+-- ALTER TABLE paintings ADD latitude real;
+-- ALTER TABLE paintings ADD longitude real;
 
 
 -- ALTER TABLE paintings ADD map ?????????;
