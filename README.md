@@ -1,6 +1,6 @@
 # Piece Of Art
 
-## See it [online](https://magdalenabialon.github.io/)
+## See it [online](https://github.com/magdalenabialon)
 ![](http://1.bp.blogspot.com/-E_KisiFqhKw/U017Gz3InjI/AAAAAAAABY8/cPo3foI-NHU/s1600/275225_Papel-de-Parede-O-Nascimento-de-Venus-Botticelli_1920x1080.jpg)
 
 
@@ -13,7 +13,7 @@ Piece Of Art is a service / photo sharing app where you can collect & store info
    - like & comment others' paintings
    - see paintings' city location on the map
    - search for exact painting tittle (for pro users & real art lovers ;)
-   - user can delete others' comments on his/hers position
+   - user can delete others' comments on his / hers position
    - home page displays the most popular & liked positions
 - 2. If not logged in you can still see all posted art :D
 
@@ -38,10 +38,10 @@ https://trello.com/b/8sqKfyFn/project2
     - started with index.erb, added links, buttons
     - main.rb - added all basic funcionality
     - gradually created more erb vievs, RESTful routes / interaction with relationally-stored data
-    - working on 4 branches: master, likes, signup, goe  googLocation
+    - working on 4 branches: master, likes, signup, googLocation
     - basic: models, sign up/log in functionality, RESTful routes, ORM, HTML and CSS
     - extra: adding/editing comments by specific users, likes, top likes, geolocation
-- 6 Making all app pretty - vievs: index, layout, my_album, painting_detail, signup, create, edit
+- 6 Making my app pretty - vievs: index, layout, my_album, painting_detail, signup, create, edit
 - 7 Readme file with description of my app
 - 8 Hosted website online :)
 
@@ -52,4 +52,5 @@ Signup, login, post, edit, like, comment, enjoy :)
 
 ![](http://www.symmetrymagazine.org/sites/default/files/styles/2015_hero/public/images/standard/Louvre_pyramid-s_0.jpg?itok=yrVkzT7J)
 
-Great thanks to my instructors! :)
+Great thanks to my instructors and classmates! :)
+[DT](https://github.com/epoch) & [Harry](https://github.com/HMAN1911)
