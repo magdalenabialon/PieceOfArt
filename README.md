@@ -52,5 +52,6 @@ Signup, login, post, edit, like, comment, enjoy :)
 
 ![](http://www.symmetrymagazine.org/sites/default/files/styles/2015_hero/public/images/standard/Louvre_pyramid-s_0.jpg?itok=yrVkzT7J)
 
-Great thanks to my instructors and classmates! :)
+Great thanks to my instructors
 [DT](https://github.com/epoch) & [Harry](https://github.com/HMAN1911)
+and classmates! :)
