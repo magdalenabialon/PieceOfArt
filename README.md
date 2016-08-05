@@ -5,16 +5,16 @@
 
 
 ##Overview
-Piece Of Art is a service/ photo sharing app where you can collect/store information about your favourite art.
+Piece Of Art is a service / photo sharing app where you can collect & store information about your favourite art.
 
-If logged in / signed up, it lets you:
-- insert: image, title, author, location and more..!
-- edit & delete every post and comment
-- like & comment others' paintings
-- search for exact painting tittle (for pro users & real art lovers ;)
-- user can delete others' comments on his/hers position
-- home page displays the most popular & liked positions
-If not logged in you can still see all posted art :D
+- 1 If logged in / signed up, it lets you:
+   - insert: image, title, author, location and more..!
+   - edit & delete every post and comment
+   - like & comment others' paintings
+   - search for exact painting tittle (for pro users & real art lovers ;)
+   - user can delete others' comments on his/hers position
+   - home page displays the most popular & liked positions
+- 2 If not logged in you can still see all posted art :D
 
 
 ###Technologies used:
