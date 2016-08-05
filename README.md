@@ -7,42 +7,49 @@
 ##Overview
 Piece Of Art is a service / photo sharing app where you can collect & store information about your favourite art.
 
-- 1 If logged in / signed up, it lets you:
-   - insert: image, title, author, location and more..!
+- 1. If logged in / signed up, it lets you:
+   - insert: image, title, author, style and more..!
    - edit & delete every post and comment
    - like & comment others' paintings
+   - see paintings' city location on the map
    - search for exact painting tittle (for pro users & real art lovers ;)
    - user can delete others' comments on his/hers position
    - home page displays the most popular & liked positions
-- 2 If not logged in you can still see all posted art :D
+- 2. If not logged in you can still see all posted art :D
 
 
 ###Technologies used:
-html, css, jQuery, Ruby, PostgreSQL, Sinatra, Active Record, GitHub, Heroku hosting
+html, css, jQuery, Ruby, PostgreSQL, Sinatra, Active Record, geocoder, GitHub, Heroku hosting
 
+##Features to be added
+Improve searching functionality, let users update their account
 
 
 ##Workflow:
 
-- 1 Created an empty board
-- 2 Determined winning combinnations
-- 3 Manually given x and o into the game
-- 4 Builded DOM, added basic stale & images
-- 5 Connected DOM with java script & jQuery
-- 6 Started working on the main function: onClick
-    - determine whose turn it is
-    - pushing the choice into an array
-    - detemining the winner (x, o) or tie
-    - making sure box can't be chosen twice
-    - tracking scores
-- 7 Added images for x, o and big ones when someone won or there is a tie
-- 8 Working on the style: 1 main board and 2 score boards, adding size to all elements
-- 9 Starting new game after set out time : 2sec
-- 10 Game twist: different images if score >=3;
-- 11 Players can choose their turns :)
+![](https://trello.com/b/8sqKfyFn/project2)
+![](https://trello-attachments.s3.amazonaws.com/57a3eedcceaa0e1d950593fa/2048x2732/22fa3fb6dd94552c357660f26e76c081/image1.PNG)
+
+- 1 Started with the end in mind (wireframing, user stories, pseudocode)
+- 2 Database: 4 tables: paintings, users, comments, likes and joined table to count each painting total likes
+- 3 Created project with all templates
+- 4 Committed early, committed often :)
+- 5 Project itself:
+    - started with index.erb, added links, buttons
+    - main.rb - added all basic funcionality
+    - gradually created more erb vievs, RESTful routes / interaction with relationally-stored data
+    - working on 4 branches: master, likes, signup, goe  googLocation
+    - basic: models, sign up/log in functionality, RESTful routes, ORM, HTML and CSS
+    - extra: adding/editing comments by specific users, likes, top likes, geolocation
+- 6 Making all app pretty - vievs: index, layout, my_album, painting_detail, signup, create, edit
+- 7 Readme file with description of my app
+- 8 Hosted website online :)
+
 
 
 ##Instructions: Not really needed... !
 Signup, login, post, edit, like, comment, enjoy :)
 
 ![](http://www.symmetrymagazine.org/sites/default/files/styles/2015_hero/public/images/standard/Louvre_pyramid-s_0.jpg?itok=yrVkzT7J)
+
+Great thanks to my instructors! :)
