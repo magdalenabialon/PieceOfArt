@@ -45,4 +45,4 @@ html, css, jQuery, Ruby, PostgreSQL, Sinatra, Active Record, GitHub, Heroku host
 ##Instructions: Not really needed... !
 Signup, login, post, edit, like, comment, enjoy :)
 
-![](http://7-themes.com/data_images/out/44/6918817-louvre-museum.jpg)
+![](http://www.symmetrymagazine.org/sites/default/files/styles/2015_hero/public/images/standard/Louvre_pyramid-s_0.jpg?itok=yrVkzT7J)
