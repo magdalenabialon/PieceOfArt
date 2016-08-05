@@ -5,7 +5,7 @@
 
 
 ##Overview
-Piece Of Art is a service/ Photo sharing app where you can collect/store information about your favourite art :)
+Piece Of Art is a service/ photo sharing app where you can collect/store information about your favourite art.
 
 If logged in / signed up, it lets you:
 - insert: image, title, author, location and more..!
@@ -17,7 +17,7 @@ If logged in / signed up, it lets you:
 If not logged in you can still see all posted art :D
 
 
-Technologies used:
+###Technologies used:
 html, css, jQuery, Ruby, PostgreSQL, Sinatra, Active Record, GitHub, Heroku hosting
 
 
