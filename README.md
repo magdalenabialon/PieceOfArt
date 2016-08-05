@@ -43,6 +43,6 @@ html, css, jQuery, Ruby, PostgreSQL, Sinatra, Active Record, GitHub, Heroku host
 
 
 ##Instructions: Not really needed... !
-###Signup, login, post, edit, like, comment, enjoy :)
+Signup, login, post, edit, like, comment, enjoy :)
 
-![](https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQisNRdcJwT1baql0dfYO9mTO34R_f_wGuRNHdCZeHSUYKgqeEp)
+![](http://7-themes.com/data_images/out/44/6918817-louvre-museum.jpg)
