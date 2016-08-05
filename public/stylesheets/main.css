@@ -127,6 +127,7 @@ body {
   padding-top: 20px;
   text-decoration: none;
 }
+
 /*#myAlbumInx{
   font-family: 'Great Vibes', cursive;
   font-size: 20px;
@@ -250,35 +251,34 @@ input:hover {
 }
 
 #logoutBtnIndex, #loginBtnIndex, #search {
-    background-color: black;
-    border: 1px solid grey;
-    border-radius: 30px;
-    height: 45px;
-    width: 45px;
-    font-family: 'Tangerine', cursive;
-    font-size: 25px;
-    color: white;
-    margin-top: 10px;
-    margin-bottom: 50px;
+  background-color: black;
+  border: 1px solid grey;
+  border-radius: 30px;
+  height: 45px;
+  width: 45px;
+  font-family: 'Tangerine', cursive;
+  font-size: 25px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .signupSig {
-    background-color: black;
-    border: 1px solid grey;
-    border-radius: 35px;
-    height: 67px;
-    width: 65px;
-    font-family: 'Tangerine', cursive;
-    font-size: 25px;
-    color: white;
-    margin-top: 10px;
-    margin-bottom: 50px;
+  background-color: black;
+  border: 1px solid grey;
+  border-radius: 35px;
+  height: 67px;
+  width: 65px;
+  font-family: 'Tangerine', cursive;
+  font-size: 25px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
-.signupSig:hover{
+.signupSig:hover {
   background-color: #51afea;
 }
-
 
 #search {
   height: 49px;
@@ -317,7 +317,6 @@ footer {
   width: 100%;
 }
 
-
 span {
   font-family: 'Tangerine', cursive;
   font-size: 20px;
@@ -329,7 +328,7 @@ li {
   font-size: 13px;
 }
 
-#signupPage{
+#signupPage {
   /*width: 80%;*/
   padding-bottom: 110px;
   padding-top: 150px;
@@ -339,25 +338,25 @@ li {
   width: 60%;
 }
 
-#createPage{
+#createPage {
   width: 80%;
 }
 
-#ptgImgWrapper{
+#ptgImgWrapper {
  display: inline-block;
  width: 53%;
  margin-bottom: 0px;
 
 }
 
-#ptgDetailWrapper{
+#ptgDetailWrapper {
   display: inline-block;
   width: 47%;
   float:right;
   margin-top: 27px;
 }
 
-#ptgMainDetail{
+#ptgMainDetail {
   /*width: 600px;*/
   padding: 0;
   margin: 0;
@@ -431,9 +430,13 @@ h6 {
   background-color: #8b0000;
 }
 
-textarea{
+textarea {
   width: 18%;
   height: 90px;
+}
+
+textarea:hover {
+  background-color: lightgrey;
 }
 
 h3 {

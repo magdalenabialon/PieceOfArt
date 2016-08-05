@@ -1,47 +1,40 @@
 <link rel="stylesheet" href="stylesheets/slideme.css">
 
-<div id='banner'>
-  <ul class='slideme'>
-    <li><img class = 'sliding_banner' src="/images/Birth_of_Venus_Botticelli.jpg" alt=""></li>
-    <li><img class = 'sliding_banner' src="/images/Rae_-_Water_Nymphs_(color).jpg" alt=""></li>
-    <li><img class = 'sliding_banner' src="/images/img.jpg" alt=""></li>
-    <li><img class = 'sliding_banner' src="/images/Siemiradski_Fackeln.jpg" alt=""></li>
+<div id="banner">
+  <ul class="slideme">
+    <li><img class = "sliding_banner" src="/images/Birth_of_Venus_Botticelli.jpg" alt=""></li>
+    <li><img class = "sliding_banner" src="/images/Rae_-_Water_Nymphs_(color).jpg" alt=""></li>
+    <li><img class = "sliding_banner" src="/images/img.jpg" alt=""></li>
+    <li><img class = "sliding_banner" src="/images/Siemiradski_Fackeln.jpg" alt=""></li>
   </ul>
 </div>
 
 
-<div id='menu_index'>
-
-    <%if logged_in?%>
-      <h4 id = 'greetIndex'>hi there <%= current_user.name.capitalize %></h4>
-    <%end%>
-
+<div id="menu_index">
+  <%if logged_in?%>
+    <h4 id = "greetIndex">hi there <%= current_user.name.capitalize %></h4>
+  <%end%>
 </div>
 
 
-<div id = 'login_section'>
+<div id = "login_section">
 
   <%if !logged_in?%>
     <form action="/session" method = "post">
-      <input class='loginInput' type="text" placeholder="email" name = "email">
-      <input class='loginInput' type="password" placeholder="password" name = "password">
-      <button id= 'loginBtnIndex'>login</button>
+      <input class="loginInput" type="text" placeholder="email" name = "email">
+      <input class="loginInput" type="password" placeholder="password" name = "password">
+      <button id= "loginBtnIndex">login</button>
     </form>
-
-  <a id='signup' href="/signup">signup</a>
-
+    <a id="signup" href="/signup">signup</a>
   <%end%>
-
-
 
   <%if logged_in?%>
     <form action="/session" method = "post">
-      <input type="hidden" name ="_method" value = 'delete'>
-      <button id ='logoutBtnIndex'>logout</button>
+      <input type="hidden" name ="_method" value = "delete">
+      <button id ="logoutBtnIndex">logout</button>
     </form>
-    <a id = 'myAlbumInx' href = "/my_album"> my album  &#8605 </a>
+    <a id = "myAlbumInx" href = "/my_album"> my album  &#8605 </a>
   <%end%>
-
 
   <form action="/results" method="get">
     <input class = "searchInput" type="text" placeholder = "painting title"  name = "painting_search" >
@@ -52,22 +45,22 @@
 
 
 
-<div id = 'homeAlbumGallery'>
+<div id = "homeAlbumGallery">
 
     <% @top_ordered_paintgs.each do |painting| %>
 
        <div class="allPaintings">
-          <a href="/painting_detail/<%= painting.id %>"> <img id = 'mainPageGallery' src = " <%= painting.img_url %> "> </a>
+          <a href="/painting_detail/<%= painting.id %>"> <img id = "mainPageGallery" src = " <%= painting.img_url %> "> </a>
           <form action="/painting/<%=painting.id%>/likes" method = "post">
-            <input type="hidden" name ="_method" value = 'put'>
+            <input type="hidden" name ="_method" value = "put">
             <h5><%= painting.likes_count %></h5>
             <%if logged_in?%>
-              <button id = 'likebtn' onclick = "this.style.backgroundColor='white' ">Like</button>
-            <% end %>
-            </form>
+              <button id = "likebtn" onclick = "this.style.backgroundColor="white" ">Like</button>
+            <%end%>
+          </form>
        </div>
 
-    <% end %>
+    <%end%>
 
 </div>
 
@@ -82,14 +75,14 @@
 
 
 <script>
-$('#banner').slideme({
+$("#banner").slideme({
   interval : 3000,
   speed : 900,
   autoslide : true,
   loop : true,
   autoslideHoverStop : false,
   // arrows: true,
-  // pagination: 'numbers',
+  // pagination: "numbers",
     resizable: {
     width: 990,
     height: 450,

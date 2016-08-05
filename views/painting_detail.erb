@@ -1,5 +1,5 @@
 
-<div id='ptgImgWrapper'>
+<div id="ptgImgWrapper">
 
   <img id="paintingImage"src = "<%= @painting.img_url %> ">
 
@@ -7,10 +7,10 @@
 
 
 
-<div id = 'ptgDetailWrapper'>
+<div id = "ptgDetailWrapper">
 
-    <div id = 'description'>
-      <h2 id = 'title'> <%= @painting.title %> </h2>
+    <div id = "description">
+      <h2 id = "title"> <%= @painting.title %> </h2>
       <h2> Author: <%= @painting.author %> </h2>
       <h2> Century: <%= @painting.century %> </h2>
       <h2> Style: <%= @painting.style %> </h2>
@@ -18,22 +18,22 @@
       <h2> City: <%= @painting.city %> </h2>
       <h2> Museum: <%= @painting.museum %> </h2>
 
-      <div id = 'googLocation'>
+      <div id = "googLocation">
         <h6>Coordinates: <%=@painting.latitude%> * <%=@painting.longitude%></h6>
-        <img id = 'map' src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@painting.latitude%>,<%=@painting.longitude%>&zoom=12&size=250x250&style=feature:road.local|element:labels|color:0xffffff&key=AIzaSyA4uVG3OqwRc6lvImkq8wBNkQUE2mu7CSM">
+        <img id = "map" src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@painting.latitude%>,<%=@painting.longitude%>&zoom=12&size=250x250&style=feature:road.local|element:labels|color:0xffffff&key=AIzaSyA4uVG3OqwRc6lvImkq8wBNkQUE2mu7CSM">
       </div>
     </div>
 
-    <div id = 'comments'>
+    <div id = "comments">
       <ul>
         <%if logged_in? && @painting.user_id == current_user.id %>
           <li>
-            <a id = 'ediPaintingBtn' href="/painting/<%= @painting.id %>/edit"> edit </a>
+            <a id = "ediPaintingBtn" href="/painting/<%= @painting.id %>/edit"> edit </a>
           </li>
           <li>
             <form action="/painting/<%= @painting.id %>" method = "post">
               <input type="hidden" name = "_method" value ="delete">
-              <button id = 'deletePainting'>delete</button>
+              <button id = "deletePainting">delete</button>
             </form>
           </li>
         <%end%>
@@ -44,7 +44,7 @@
       <%if logged_in? %>
 
          <form action="/painting/<%= @painting.id %>" method="post">
-            <textarea type="text" maxlength='500'  name = "comment" ></textarea>
+            <textarea type="text" maxlength="500"  name = "comment" ></textarea>
             <button class = "signupSig">comment</button>
          </form>
 
@@ -72,9 +72,9 @@
                  <%end%>
                </li>
             </ul>
-        <% end %>
+        <%end%>
 
-      <% end %>
+      <%end%>
     </div>
 
 </div>

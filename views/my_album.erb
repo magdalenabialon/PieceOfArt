@@ -1,5 +1,5 @@
 
-<div id = 'myAlbumSection'>
+<div id = "myAlbumSection">
 
   <%if logged_in?%>
     <a id = "createPosition" href="/create">create new Position</a>
@@ -13,18 +13,18 @@
 
 
 
-<div id = 'myAlbumGallery'>
+<div id = "myAlbumGallery">
 
-    <% @paintings.each do |painting| %>
+    <%@paintings.each do |painting| %>
       <div class="allPaintings">
-        <h4><a class = 'painTitlealbum' href="/painting_detail/<%= painting.id %>"> <%= painting.title %> </a></h4>
+        <h4><a class = "painTitlealbum" href="/painting_detail/<%= painting.id %>"> <%= painting.title %> </a></h4>
         <br>
-        <a href="/painting_detail/<%= painting.id %>"> <img id = 'albumPageGallery' src = " <%= painting.img_url %> "> </a>
+        <a href="/painting_detail/<%= painting.id %>"> <img id = "albumPageGallery" src = " <%= painting.img_url %> "> </a>
 
         <form action="/painting/<%=painting.id%>/likes" method = "post">
-          <input type="hidden" name ="_method" value = 'put'>
-          <h5 id='likes_album'><%= painting.likes.count %></h5>
-          <button id = 'likebtn' onclick = "this.style.backgroundColor='grey' ">Like</button>
+          <input type="hidden" name ="_method" value = "put">
+          <h5 id="likes_album"><%= painting.likes.count %></h5>
+          <button id = "likebtn" onclick = "this.style.backgroundColor="black" ">Like</button>
         </form>
       </div>
     <% end %>
