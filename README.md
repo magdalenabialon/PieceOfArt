@@ -33,7 +33,7 @@ https://trello.com/b/8sqKfyFn/project2
 ![](https://trello-attachments.s3.amazonaws.com/57a3eedcceaa0e1d950593fa/2048x2732/22fa3fb6dd94552c357660f26e76c081/image1.PNG)
 
 - 1 Started with the end in mind (wireframing, user stories, pseudocode)
-- 2 Database: 4 tables: paintings, users, comments, likes and joined table to count each painting total likes
+- 2 Database: 4 tables: paintings, users, comments, likes and joined table to count each paintings' total likes
 - 3 Created project with all templates
 - 4 Committed early, committed often :)
 - 5 Project itself:
@@ -41,8 +41,8 @@ https://trello.com/b/8sqKfyFn/project2
     - main.rb - added all basic funcionality
     - gradually created more erb vievs, RESTful routes / interaction with relationally-stored data
     - working on 4 branches: master, likes, signup, googLocation
-    - basic: models, sign up/log in functionality, RESTful routes, ORM, HTML and CSS
-    - extra: adding/editing comments by specific users, likes, top likes, geolocation
+    - project basic: 2 models, sign up/log in functionality, RESTful routes, ORM, HTML and CSS
+    - project extra: (2basic+2extra)models, adding/editing comments by specific users, likes, top likes, geolocation
 - 6 Making my app pretty - vievs: index, layout, my_album, painting_detail, signup, create, edit
 - 7 Readme file with description of my app
 - 8 Hosted website online :)
